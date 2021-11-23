@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="item">
+        hello world
+    </div>
+</body>
+<style>
+    .item {
+        width: 200px;
+        height: 600px;
+        border-radius: 12px;
+        border: 1px solid black;
+        padding: 12px;
+        background-image: url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80');
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .item::after {
+        content: ''; 
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(155, 155, 155, .3);
+        border-radius: 100%;
+        backdrop-filter: blur(7px);
+        z-index: -1;
+        position: absolute;
+        transform: translateX(200px);
+    }
+    .item::before {
+        content: '';
+        width: 100px;
+        height: 100%;
+        background-color: red;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        transform: translateX(200px);
+    }
+</style>
+</html>
